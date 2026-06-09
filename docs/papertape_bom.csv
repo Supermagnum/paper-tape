@@ -1,0 +1,37 @@
+Reference,Qty,Value,Manufacturer,MPN,Description,Notes
+R1,1,1 kOhm,Yageo,CFR-25JB-52-1K,Resistor 1/4W 5% 1 kOhm axial,Body diameter < 2.4 mm; or 0805 SMD equivalent on R1A pad
+R2,1,1 kOhm,Yageo,CFR-25JB-52-1K,Resistor 1/4W 5% 1 kOhm axial,Body diameter < 2.4 mm; or 0805 SMD equivalent on R2A pad
+R3,1,1 kOhm,Yageo,CFR-25JB-52-1K,Resistor 1/4W 5% 1 kOhm axial,Body diameter < 2.4 mm; or 0805 SMD equivalent on R3A pad
+R4,1,1 kOhm,Yageo,CFR-25JB-52-1K,Resistor 1/4W 5% 1 kOhm axial,Body diameter < 2.4 mm; or 0805 SMD equivalent on R4A pad
+R5,1,680 Ohm,Yageo,CFR-25JB-52-680R,Resistor 1/4W 5% 680 Ohm axial,Body diameter < 2.4 mm; or 0805 SMD equivalent on R5A pad
+RN1,1,9 x 4.7 kOhm,Vishay,CSC09A014K70GEK,Resistor network 9-pin SIL bussed 4.7 kOhm 2%,Alternative: FREI L 10-1S 2% 4.7 K; alt values 2.7k/10k for LED/PT batch variation; 22k/33k for printed-tape (INV jumper)
+C1,1,100 nF,Kemet,C315C104M1U5TA,Capacitor ceramic 100 nF 50 V radial 2.54 mm pitch,Reichelt equivalent: X7R-2.5 100N
+LED1,1,,Kingbright,L-2060SRD,LED 1.8 mm red THT,Feed/data channel LED
+LED2,1,,Kingbright,L-2060SRD,LED 1.8 mm red THT,Feed/data channel LED
+LED3,1,,Kingbright,L-2060SRD,LED 1.8 mm red THT,Feed/data channel LED
+LED4,1,,Kingbright,L-2060SRD,LED 1.8 mm red THT,Feed/data channel LED
+LED5,1,,Kingbright,L-2060SRD,LED 1.8 mm red THT,Feed/data channel LED
+LED6,1,,Kingbright,L-2060SRD,LED 1.8 mm red THT,Feed/data channel LED
+LED7,1,,Kingbright,L-2060SRD,LED 1.8 mm red THT,Feed/data channel LED
+LED8,1,,Kingbright,L-2060SRD,LED 1.8 mm red THT,Feed/data channel LED
+LED9,1,,Kingbright,L-2060SRD,LED 1.8 mm red THT,Feed/data channel LED
+T1,1,,Vishay,BPW17N,Phototransistor NPN T-3/4,Data/feed sensor
+T2,1,,Vishay,BPW17N,Phototransistor NPN T-3/4,Data/feed sensor
+T3,1,,Vishay,BPW17N,Phototransistor NPN T-3/4,Data/feed sensor
+T4,1,,Vishay,BPW17N,Phototransistor NPN T-3/4,Data/feed sensor
+T5,1,,Vishay,BPW17N,Phototransistor NPN T-3/4,Data/feed sensor
+T6,1,,Vishay,BPW17N,Phototransistor NPN T-3/4,Data/feed sensor
+T7,1,,Vishay,BPW17N,Phototransistor NPN T-3/4,Data/feed sensor
+T8,1,,Vishay,BPW17N,Phototransistor NPN T-3/4,Data/feed sensor
+T9,1,,Vishay,BPW17N,Phototransistor NPN T-3/4,Data/feed sensor
+S1,1,,Omron,B3F-1002,Tactile switch 6x6 mm 0.9 mm plunger yellow,CAL button
+JP1,1,1x2 socket,Binder MPE GmbH,006-1-002-D-B1STF-XS0,Precision socket strip 1x2 2.54 mm pitch,5 V power link to illuminator; or share pins from Arduino/RN1 socket
+JP2,1,Wire jumper,,,Two clipped wire ends,5 V power link to illuminator module
+U1,1,Pro Micro 5V 16 MHz,SparkFun,DEV-12640,Arduino-compatible ATmega32U4 board,5 V / 16 MHz only; generic clones also work
+J1,1,1x8 header,Binder MPE GmbH,087-1-008-0-S-XS0-1260,Pin header strip 1x8 2.54 mm pitch straight,Optional jumpers for TX TST INV 5BIT
+J2,1,1x20 socket,FREI,SPL 20,Precision socket strip 1x20 2.54 mm pitch straight,Optional Arduino socket (need 2x12 positions)
+J3,1,1x20 socket,FREI,SPL 20,Precision socket strip 1x20 2.54 mm pitch straight,Optional Arduino socket (need 2x12 positions)
+J4,1,1x20 pin header,ASSMANN WSW,AW 122-20/G-T,Precision pin header strip 1x20 2.54 mm pitch straight,Optional mating pins for Arduino socket (need 2x12 positions)
+J5,1,1x20 pin header,ASSMANN WSW,AW 122-20/G-T,Precision pin header strip 1x20 2.54 mm pitch straight,Optional mating pins for Arduino socket (need 2x12 positions)
+HW1,4,M3 x 12 mm,,DIN 912 M3x12,Socket head cap screw M3 12 mm,Slightly longer than 12 mm acceptable
+HW2,4,M3,,DIN 934 M3,Hex nut M3,Knurled or cap nut recommended as feet

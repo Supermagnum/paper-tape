@@ -184,7 +184,8 @@ paper-tape/
 │   ├── papertape_spacer/          # Gerbers for spacer board
 │   └── papertape_panel/           # Gerbers for combined panel
 ├── docs/
-│   ├── papertape_bom.pdf          # Bill of materials
+│   ├── papertape_bom.pdf          # Bill of materials (original)
+│   ├── papertape_bom.csv          # Bill of materials with manufacturer MPNs
 │   ├── papertape_all.pdf          # Full design documentation (PDF)
 │   └── Paper_Tape_Template.xlsx   # Paper tape template
 └── images/                        # Build photos and PCB stack diagram
@@ -208,7 +209,8 @@ Order PCBs by uploading the Gerber files from `gerbers/papertape_pcb/` and `gerb
 | `gerbers/papertape_pcb/` | Gerber + drill files for main board |
 | `gerbers/papertape_spacer/` | Gerber + drill files for spacer |
 | `gerbers/papertape_panel/` | Gerber + drill files for panel |
-| `docs/papertape_bom.pdf` | Bill of materials |
+| `docs/papertape_bom.pdf` | Bill of materials (original PDF) |
+| `docs/papertape_bom.csv` | Bill of materials with manufacturer part numbers (CSV) |
 | `papertape_pcb.sch`, `papertape_pcb.brd` | Original Eagle design files |
 | `papertape_spacer.brd` | Original Eagle spacer board |
 
