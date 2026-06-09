@@ -2,6 +2,8 @@
 
 **Repository:** [github.com/Supermagnum/paper-tape](https://github.com/Supermagnum/paper-tape)
 
+<a href="https://www.pcbway.com/project/shareproject/paper_tape_reade_0e895082.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
+
 Design and documentation by [Jürgen Müller / e-basteln](https://e-basteln.de/computing/papertape/overview/). This repository contains the firmware, PCB design files, and manufacturing data for the manual optical paper tape reader described on the [e-basteln Paper Tape Reader pages](https://e-basteln.de/computing/papertape/overview/).
 
 ## Overview
@@ -195,7 +197,7 @@ paper-tape/
     └── pcb_stack.png
 ```
 
-Order PCBs by uploading the Gerber files from `gerbers/papertape_pcb/` and `gerbers/papertape_spacer/`, or use `gerbers/papertape_panel/` for the combined panel layout.
+Order PCBs from the [PCBWay shared project](https://www.pcbway.com/project/shareproject/paper_tape_reade_0e895082.html), or upload the Gerber files from `gerbers/papertape_pcb/` and `gerbers/papertape_spacer/`, or use `gerbers/papertape_panel/` for the combined panel layout.
 
 ## Design Files
 
