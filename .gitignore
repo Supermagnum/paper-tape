@@ -1,0 +1,10 @@
+# Local backups (not for distribution)
+papertape_pcb-backups/
+kicad/papertape_pcb-backups/
+**/*.bak
+
+# KiCad generated / local cache
+fp-info-cache
+kicad/fp-info-cache
+*-drc.rpt
+*.kicad_prl

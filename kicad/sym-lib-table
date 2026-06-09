@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "papertape_pcb-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/papertape_pcb-eagle-import.kicad_sym")(options "")(descr ""))
+)
