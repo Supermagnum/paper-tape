@@ -6,6 +6,8 @@
 
 Design and documentation by [Jürgen Müller / e-basteln](https://e-basteln.de/computing/papertape/overview/). This repository contains the firmware, PCB design files, and manufacturing data for the manual optical paper tape reader described on the [e-basteln Paper Tape Reader pages](https://e-basteln.de/computing/papertape/overview/).
 
+PCB files converted to Kicad, I have merged the 4 spacers into the main pcb file.
+
 ## Overview
 
 This little manual paper tape reader is easy to build and operate. It connects to any modern computer via USB, and performs well with all kinds of 5 to 8 bit paper tape, including translucent paper materials. To compensate for sensor tolerances and adjust to different paper types, it can automatically calibrate its optical sensors.
