@@ -5,16 +5,16 @@
       "Application": "Pcbnew",
       "Version": "9.0.9-9.0.9~ubuntu24.04.1"
     },
-    "CreationDate": "2026-06-11T16:07:47+02:00"
+    "CreationDate": "2026-06-11T15:59:49+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "papertape_panel",
-      "GUID": "70617065-7274-4617-9065-5f70616e656c",
+      "Name": "papertape_pcb",
+      "GUID": "70617065-7274-4617-9065-5f7063622e6b",
       "Revision": "rev?"
     },
     "Size": {
-      "X": 210.0908,
+      "X": 104.19,
       "Y": 88.95
     },
     "LayerNumber": 2,
@@ -34,47 +34,47 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "papertape_panel-F_Cu.gbr",
+      "Path": "papertape_pcb-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "papertape_panel-B_Cu.gbr",
+      "Path": "papertape_pcb-B_Cu.gbr",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "papertape_panel-F_Paste.gbr",
+      "Path": "papertape_pcb-F_Paste.gbr",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "papertape_panel-B_Paste.gbr",
+      "Path": "papertape_pcb-B_Paste.gbr",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "papertape_panel-F_Silkscreen.gbr",
+      "Path": "papertape_pcb-F_Silkscreen.gbr",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "papertape_panel-B_Silkscreen.gbr",
+      "Path": "papertape_pcb-B_Silkscreen.gbr",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "papertape_panel-F_Mask.gbr",
+      "Path": "papertape_pcb-F_Mask.gbr",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "papertape_panel-B_Mask.gbr",
+      "Path": "papertape_pcb-B_Mask.gbr",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "papertape_panel-Edge_Cuts.gbr",
+      "Path": "papertape_pcb-Edge_Cuts.gbr",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }
