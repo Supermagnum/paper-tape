@@ -9,6 +9,7 @@ Design and documentation by [Jürgen Müller / e-basteln](https://e-basteln.de/c
 PCB files converted to Kicad, I have merged the 4 spacers into the main pcb file.
 
 Use 1.6mm thick PCB board.
+Spacers originally used  1.2 mm thick PCB.
 
 ## Overview
 
