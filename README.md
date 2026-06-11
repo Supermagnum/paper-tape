@@ -10,6 +10,9 @@ PCB files converted to Kicad, I have merged the 4 spacers into the main pcb file
 
 Use 1.6mm thick PCB board.
 Spacers originally used  1.2 mm thick PCB.
+The material of these spacers is not important, they just have to be light tight.
+If you make those yourself, use a spacer pcb as a template, make 2x  2.4mm thick.
+They can be 3D printed if you choose to do so.
 
 ## Overview
 
