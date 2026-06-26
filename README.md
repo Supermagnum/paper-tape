@@ -6,13 +6,11 @@
 
 Design and documentation by [Jürgen Müller / e-basteln](https://e-basteln.de/computing/papertape/overview/). This repository contains the firmware, PCB design files, and manufacturing data for the manual optical paper tape reader described on the [e-basteln Paper Tape Reader pages](https://e-basteln.de/computing/papertape/overview/).
 
-PCB files converted to Kicad, I have merged the 4 spacers into the main pcb file.
+PCB files converted to KiCad. Note that the main board and included template PCBs use **1.6 mm** thickness. The Gerber files in `gerbers/papertape_spacer/` are for the **1.6 mm templates** (identifiable by their larger aperture holes), used as alignment guides during assembly.
 
-Use 1.6mm thick PCB board.
-Spacers originally used  1.2 mm thick PCB.
-The material of these spacers is not important, they just have to be light tight.
-If you make those yourself, use a spacer pcb as a template, make 2x  2.4mm thick.
-They can be 3D printed if you choose to do so.
+The actual **spacers** (2× 1.2 mm thick) are **not included as Gerber files** and must be made separately. The main board and spacer templates also require **different PCB thicknesses** and must be ordered as **separate jobs** from your PCB manufacturer. Both 1.6 mm and 1.2 mm are standard thickness options at JLCPCB and PCBWay, with a minimum order of 5 pieces each.
+
+The material of the spacers is not important, they just have to be light-tight. Options include 3D printing in black filament, or cutting from 1.2 mm black acrylic or similar opaque material. Use the 1.6 mm template PCB as a guide when making them. Make 2× spacers, for a total thickness of 2.4 mm.
 
 ## Overview
 
