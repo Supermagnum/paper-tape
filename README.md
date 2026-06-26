@@ -117,6 +117,7 @@ Sectional view of the stack of PCBs which make the chassis, as well as the key e
 #### Sourcing the parts
 
 - The design files for the custom circuit boards are provided in the Design Files section below. You can order the PCBs cheaply from vendors like JLCPCB, PCBWay, Aisler etc. by uploading the zipped Gerber files provided.
+- The [PCBWay shared project](https://www.pcbway.com/project/shareproject/paper_tape_reade_0e895082.html) lists all parts needed to build the reader (PCBs and components). The part list is in `docs/papertape_bom_PCBWay Community.csv`.
 - While the microcontroller board is commonly called an "Arduino Pro Micro", and is fully compatible with the Arduino development tools, it was not designed by the Arduino company but by Sparkfun. You can purchase the original Sparkfun Pro Micro or one of various cheaper "Pro Micro" or "Arduino Pro Micro" clones available on ebay etc. In either case, be sure to buy the **5 V / 16 MHz** version! The variant operating at 3.3 V and 8 MHz is not suitable for this project.
 - A Digikey shopping cart is available for most of the other parts. If you are based in Europe, Reichelt may be a lower-cost alternative supplier (see the bill of materials in the Design Files section below). The Digikey cart contains alternative values for the resistor array (2.7 kOhm or 10 kOhm), in case of major batch variations of the LEDs or photo-transistors. These may not be necessary. To my knowledge, all builds so far have successfully used the standard 4.7 kOhm array.
 
@@ -194,6 +195,7 @@ paper-tape/
 ├── docs/
 │   ├── papertape_bom.pdf          # Bill of materials (original)
 │   ├── papertape_bom.csv          # Bill of materials with manufacturer MPNs
+│   ├── papertape_bom_PCBWay Community.csv  # Part list for PCBWay shared project
 │   ├── papertape_all.pdf          # Full design documentation (PDF)
 │   └── Paper_Tape_Template.xlsx   # Paper tape template
 └── images/                        # Build photos and PCB stack diagram
@@ -203,7 +205,7 @@ paper-tape/
     └── pcb_stack.png
 ```
 
-Order PCBs from the [PCBWay shared project](https://www.pcbway.com/project/shareproject/paper_tape_reade_0e895082.html), or upload the Gerber files from `gerbers/papertape_pcb/` and `gerbers/papertape_spacer/`, or use `gerbers/papertape_panel/` for the combined panel layout.
+Order PCBs and components from the [PCBWay shared project](https://www.pcbway.com/project/shareproject/paper_tape_reade_0e895082.html), which includes all parts needed; see `docs/papertape_bom_PCBWay Community.csv` for the part list. Alternatively, upload the Gerber files from `gerbers/papertape_pcb/` and `gerbers/papertape_spacer/`, or use `gerbers/papertape_panel/` for the combined panel layout. Both PCBWay and JLCPCB have a minimum order of 5 sets.
 
 ## Design Files
 
@@ -219,6 +221,7 @@ Order PCBs from the [PCBWay shared project](https://www.pcbway.com/project/share
 | `gerbers/papertape_panel/` | Gerber + drill files for panel |
 | `docs/papertape_bom.pdf` | Bill of materials (original PDF) |
 | `docs/papertape_bom.csv` | Bill of materials with manufacturer part numbers (CSV) |
+| `docs/papertape_bom_PCBWay Community.csv` | Part list for the PCBWay shared project (all parts needed) |
 | `papertape_pcb.sch`, `papertape_pcb.brd` | Original Eagle design files |
 | `papertape_spacer.brd` | Original Eagle spacer board |
 
@@ -226,4 +229,6 @@ Order PCBs from the [PCBWay shared project](https://www.pcbway.com/project/share
 
 The original Eagle designs from [e-basteln](https://e-basteln.de/computing/papertape/overview/) have been converted to KiCad (`papertape_pcb.kicad_pcb`, `papertape_spacer.kicad_pcb`). During conversion, pre-drill holes were added to the PCB files where required for blind-milled feed-track apertures and other mechanical features that are not represented in the standard drill file alone.
 
-For panelised manufacturing, the main PCB and spacer boards are also combined in `kicad/papertape_panel.kicad_pcb`: one main board at its original position, plus four spacer instances in a 2x2 grid to the right with a 2 mm routed gap between boards.
+For panelised manufacturing, the main PCB and spacer boards are also combined in `kicad/papertape_panel.kicad_pcb`: one main board at its original position, plus four spacer instances in a 2x2 grid to the right with a 2 mm routed gap between boards. Each panel is one complete set; PCBWay and JLCPCB both require a minimum order of 5 sets.
+
+![Paper tape PCB panel layout](kicad/papertape_panel.jpg)
