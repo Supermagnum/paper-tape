@@ -12,6 +12,33 @@ The actual **spacers** (2× 1.2 mm thick) are **not included as Gerber files** a
 
 The material of the spacers is not important, they just have to be light-tight. Options include 3D printing in black filament, or cutting from 1.2 mm black acrylic or similar opaque material. Use the 1.6 mm template PCB as a guide when making them. Make 2× spacers, for a total thickness of 2.4 mm.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Using the Reader](#using-the-reader)
+  - [Capturing tape data](#capturing-tape-data)
+  - [After capture](#after-capture)
+  - [Archiving captures on Codeberg](#archiving-captures-on-codeberg)
+    - [Creating a Codeberg account](#creating-a-codeberg-account)
+    - [Creating a repository](#creating-a-repository)
+    - [Uploading files via the web interface](#uploading-files-via-the-web-interface)
+- [LEDs](#leds)
+- [Calibration](#calibration)
+- [Jumpers](#jumpers)
+- [Serial Output](#serial-output)
+- [Building the Reader](#building-the-reader)
+  - [Builder's Hints](#builders-hints)
+    - [Sourcing the parts](#sourcing-the-parts)
+    - [Preparing the PCBs](#preparing-the-pcbs)
+    - [Populating components](#populating-components)
+    - [Populating sockets and pins](#populating-sockets-and-pins)
+    - [Programming the Pro Micro](#programming-the-pro-micro)
+- [Design Approach](#design-approach)
+- [The Sales Pitch](#the-sales-pitch)
+- [Where to Find Files](#where-to-find-files)
+- [Design Files](#design-files)
+  - [Changes in this repository](#changes-in-this-repository)
+
 ## Overview
 
 This little manual paper tape reader is easy to build and operate. It connects to any modern computer via USB, and performs well with all kinds of 5 to 8 bit paper tape, including translucent paper materials. To compensate for sensor tolerances and adjust to different paper types, it can automatically calibrate its optical sensors.
@@ -39,6 +66,150 @@ To use the paper tape reader, simply connect it to a Windows 10, Linux or Mac OS
 Start a terminal program of your choice and select the right (virtual) serial port. No need to set the baud rate etc., since no physical serial port is involved. The reader will start sending data as soon as you pull paper tape through.
 
 Before the first operation, or when switching to a new type of paper tape with very different transparency, calibrate the reader as described below.
+
+### Capturing tape data
+
+Open the serial port and save the received contents to a `.txt` file with **no processing**. Capture the raw bytes exactly as received, save as plain text, and do not strip or convert anything. This means:
+
+- No parity bit masking
+- No line ending conversion
+- No stripping of leader/trailer nulls
+- No interpretation of control characters
+
+This preserves everything and keeps your options open for later analysis.
+
+**Linux:** find the device (often `/dev/ttyACM0` or `/dev/ttyUSB0`), then capture directly:
+
+```bash
+stty -F /dev/ttyACM0 raw -echo
+cat /dev/ttyACM0 > 20250627_tape_001.txt
+```
+
+Press Ctrl+C when the tape has passed through. Do not pipe through tools that alter line endings or encoding.
+
+**macOS:** same approach using the device under `/dev/tty.usb*` or `/dev/cu.usb*`.
+
+**Windows:** use a terminal that can log raw serial data to a file without translation (for example PuTTY with "All session output" logging, or a dedicated serial capture tool). Disable any "local echo", line editing, or automatic CR/LF conversion in the terminal settings.
+
+A good naming convention helps since you do not know the content yet:
+
+```
+YYYYMMDD_tape_001.txt
+```
+
+If you are digitizing a collection, this lets you track what you have read and when, and rename files later once you figure out what each tape contains.
+
+### After capture
+
+Once you have a faithful raw capture, you can:
+
+- Open it in a hex editor to inspect the raw bytes and identify the format
+- Run `file tape_001.txt` on Linux, which will attempt to auto-detect the content type
+- Look for recognizable patterns such as keywords (`PROGRAM`, `BEGIN`, `MOV`, `LDA`, etc.) that identify the language
+- Check the [bitsavers.org](https://bitsavers.org/) archive, which has a large collection of documented paper tape formats for comparison
+
+The key principle is: **capture first, identify later**. You can always convert a faithful raw capture, but you cannot recover data that was thrown away during capture.
+
+### Archiving captures on Codeberg
+
+If you want to share digitized tapes with the retrocomputing community, [Codeberg](https://codeberg.org/) is a good place to host them. Codeberg is independently operated by [Codeberg e.V.](https://codeberg.org/Codeberg/Association), a non-profit association registered in Berlin, Germany. It is community driven, privacy focused, and runs on the open-source [Forgejo](https://forgejo.org/) platform under German and EU law (GDPR). For archival work, that means no commercial pressure to monetize the platform, stronger data protection than many US-hosted services, and a community that tends to appreciate preservation projects.
+
+#### Creating a Codeberg account
+
+1. Open [codeberg.org](https://codeberg.org/) in your browser.
+2. Click **Register** in the top-right corner.
+3. Choose a username, enter your email address, and set a password.
+4. Complete the registration form and submit it.
+5. Check your email for a confirmation link from Codeberg and click it to activate the account.
+6. Sign in with your new username and password.
+
+#### Creating a repository
+
+1. After signing in, click the **+** icon in the top-right corner and select **New Repository**.
+   Alternatively, open your dashboard and click **New Repository** there.
+2. Fill in the repository details:
+   - **Owner:** your username (or an organization, if you belong to one)
+   - **Repository name:** for example `paper-tape-archive`
+   - **Description:** short summary, e.g. "Digitized paper tape captures"
+   - **Visibility:** choose **Public** if you want others to browse and clone the archive
+   - **Initialize repository:** leave **Add a README file** unchecked if you plan to upload your own files immediately; check it if you want Codeberg to create an empty starter `README.md` for you
+3. Click **Create Repository**.
+
+You now have an empty repository ready for uploads.
+
+#### Uploading files via the web interface
+
+Codeberg's web interface lets you add files without installing Git on your computer. This works well for small archives and individual tape captures.
+
+**Upload the first files to an empty repository:**
+
+1. Open your new repository in the browser.
+2. If the repository is completely empty, Codeberg shows an **Upload file** option on the landing page. Click it.
+   If the repository already has files, go to the **Code** tab, click the **+** drop-down next to the path bar, and choose **Upload file**.
+3. Drag and drop files into the upload area, or click to browse your computer.
+4. In the **Commit message** field, enter a short note such as `Add initial archive structure`.
+5. Optionally expand **Commit options** and choose whether to commit directly to the default branch (usually `main`).
+6. Click **Commit changes**.
+
+**Add a tape capture in a subdirectory:**
+
+1. Navigate to the folder where the tape should live, for example `tapes/unknown/20250627_tape_001/`.
+   To create a new folder path, type the full path into the filename field when uploading, for example:
+   `tapes/unknown/20250627_tape_001/tape_001.txt`
+   Codeberg creates any missing directories automatically.
+2. Upload the raw capture file (`tape_001.txt`) and the tape's `README.md` (create the README in the web editor if you prefer).
+3. Enter a commit message such as `Add tape 001 capture from 2025-06-27`.
+4. Click **Commit changes**.
+
+**Create or edit a README in the browser:**
+
+1. On the **Code** tab, click the **+** drop-down and choose **New file**.
+2. Enter the path, for example `tapes/unknown/20250627_tape_001/README.md`.
+3. Type or paste the README content into the editor.
+4. Add a commit message and click **Commit changes**.
+
+Repeat for each new tape. Once you have several captures, consider organizing them using the directory structure below.
+
+Suggested directory structure:
+
+```
+paper-tape-archive/
+├── README.md                    # Project description, how to contribute
+├── FORMATS.md                   # Notes on identified tape formats
+│
+└── tapes/
+    ├── unknown/                 # Tapes not yet identified
+    │   └── 19700101_tape_001/
+    │       ├── README.md        # Date, physical condition, likely source
+    │       ├── tape_001.txt     # Raw capture
+    │       └── tape_001.bin     # Raw binary if needed
+    │
+    ├── assembler/
+    │   └── 19780315_tape_002/
+    │       ├── README.md
+    │       └── tape_002.txt
+    │
+    ├── basic/
+    ├── fortran/
+    ├── pascal/
+    └── other/
+```
+
+Each tape's `README.md` should contain something like:
+
+```markdown
+# Tape 001
+
+- **Date captured:** 2025-06-27
+- **Capture device:** Paper Tape Reader (github.com/Supermagnum/paper-tape)
+- **Likely source:** [e.g. university surplus, estate sale, donated collection]
+- **Physical condition:** [good/fair/poor, any damage notes]
+- **Tape width:** [5/7/8 bit]
+- **Identified format:** unknown
+- **Notes:** [anything else relevant]
+```
+
+Move tapes from `unknown/` into `assembler/`, `basic/`, `fortran/`, or another category once the format is identified, and update `FORMATS.md` with what you learned.
 
 ## LEDs
 
