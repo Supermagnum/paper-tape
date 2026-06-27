@@ -32258,6 +32258,18 @@
 		(layer "User.5")
 		(uuid "a0b02fef-0715-4470-8dcd-48f90187c985")
 	)
+	(gr_text "IMPORTANT INFO IN README!"
+		(at 87.4 57.4 0)
+		(layer "F.SilkS")
+		(uuid "0e01385d-2e24-4991-b0d4-bc4b4d3e8e5c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "Blind hole 1.8mm\nfor phototransistor"
 		(at 89.2061 55.4186 0)
 		(layer "F.SilkS")
@@ -32448,6 +32460,30 @@
 				(thickness 0.14224)
 			)
 			(justify left bottom)
+		)
+	)
+	(gr_text "IMPORTANT INFO IN README!"
+		(at 109 103 0)
+		(layer "B.SilkS")
+		(uuid "4c1219a1-a356-45d6-b2bb-aded99bdf3c5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "DO NOT DRILL FROM  THIS SIDE!"
+		(at 111 105 0)
+		(layer "B.SilkS")
+		(uuid "f55c600f-4a64-4265-8556-e43e8acef4fa")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom mirror)
 		)
 	)
 	(gr_text "GND"
